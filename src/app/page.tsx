@@ -20,7 +20,7 @@ export default function Home() {
             Strength Balance Serenity
           </p>
           <p className="mb-6 md:mb-8 text-lg md:text-xl text-[rgb(254,250,224)] font-light drop-shadow leading-relaxed px-4">
-            Transform your body, mind & spirit in Scarborough's most elegant Pilates studio
+            Transform your body, mind &amp; spirit in Scarborough&apos;s most elegant Pilates studio
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center px-4">
             <Link

@@ -1,25 +1,60 @@
 "use client";
 
-import { useState } from "react";
+import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
+import { useState } from 'react';
+import { toast } from 'sonner';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
+    name: '',
+    email: '',
+    phone: '',
+    subject: '',
+    message: '',
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
     
-    // Create mailto link with form data
-    const subject = `Contact from ${formData.name}`;
-    const body = `Name: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0APhone: ${formData.phone}%0D%0A%0D%0AMessage:%0D%0A${formData.message}`;
-    window.location.href = `mailto:info@serenepilates.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+    try {
+      // Create mailto link with form data
+      const subject = encodeURIComponent(`Contact Form: ${formData.subject}`);
+      const body = encodeURIComponent(
+        `Name: ${formData.name}\n` +
+        `Email: ${formData.email}\n` +
+        `Phone: ${formData.phone || 'Not provided'}\n` +
+        `Subject: ${formData.subject}\n\n` +
+        `Message:\n${formData.message}`
+      );
+      
+      // Open mailto link
+      window.location.href = `mailto:concierge@serenepilates.ca?subject=${subject}&body=${body}`;
+      
+      // Show success message
+      toast.success('Message prepared!', {
+        description: 'Your email client should open shortly. If it doesn\'t, please email us directly at concierge@serenepilates.ca',
+        duration: 5000,
+      });
+      
+      // Reset form after a short delay to allow the mailto to trigger
+      setTimeout(() => {
+        setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+        setIsSubmitting(false);
+      }, 1000);
+    } catch (error) {
+      toast.error('Something went wrong', {
+        description: 'Please try emailing us directly at concierge@serenepilates.ca',
+        duration: 5000,
+      });
+      setIsSubmitting(false);
+    }
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -27,170 +62,218 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="container mx-auto px-4 py-16">
-      <h1 className="text-4xl md:text-5xl font-bold text-primary mb-8 text-center">
-        Contact Us
-      </h1>
-      <p className="text-lg text-gray-700 text-center mb-12 max-w-3xl mx-auto">
-        Get in touch with us. We&apos;d love to hear from you!
-      </p>
-
-      <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
-        {/* Contact Form */}
-        <div>
-          <h2 className="text-2xl font-bold text-primary mb-6">Send us a message</h2>
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-                Name *
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                required
-                value={formData.name}
-                onChange={handleChange}
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent"
-              />
-            </div>
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                Email *
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                required
-                value={formData.email}
-                onChange={handleChange}
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent"
-              />
-            </div>
-            <div>
-              <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
-                Phone
-              </label>
-              <input
-                type="tel"
-                id="phone"
-                name="phone"
-                value={formData.phone}
-                onChange={handleChange}
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent"
-              />
-            </div>
-            <div>
-              <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-                Message *
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                required
-                rows={5}
-                value={formData.message}
-                onChange={handleChange}
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent"
-              />
-            </div>
-            <button
-              type="submit"
-              className="w-full bg-primary text-cream px-6 py-3 rounded-md font-semibold hover:bg-primary-dark transition-colors"
-            >
-              Send Message
-            </button>
-          </form>
+    <div className="py-12 md:py-20 bg-[rgba(255,255,255,0.79)] min-h-screen">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12 md:mb-16">
+          <h1 className="mb-4 md:mb-6 text-[rgb(96,108,55)] text-3xl md:text-4xl lg:text-5xl px-4">Contact Us</h1>
+          <p className="text-[#606C37] max-w-2xl mx-auto font-light text-base md:text-xl leading-relaxed px-4">
+            Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
+          </p>
         </div>
 
-        {/* Contact Info & Map */}
-        <div>
-          <h2 className="text-2xl font-bold text-primary mb-6">Visit us</h2>
-          
-          {/* Contact Details */}
-          <div className="space-y-4 mb-8">
-            <div className="flex items-start">
-              <svg
-                className="w-6 h-6 text-primary mr-3 mt-1"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                />
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                />
-              </svg>
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-12">
+          {/* Contact Form */}
+          <div className="bg-[rgb(255,255,255)] rounded-3xl shadow-lg p-6 md:p-10 border border-[#606C37]/20">
+            <h2 className="mb-6 md:mb-8 text-[#283517] text-2xl md:text-3xl">Send Us a Message</h2>
+            <form onSubmit={handleSubmit} className="space-y-5 md:space-y-6">
               <div>
-                <p className="font-semibold text-gray-800">Address</p>
-                <p className="text-gray-600">123 Wellness Street<br />Your City, ST 12345</p>
-              </div>
-            </div>
-            <div className="flex items-start">
-              <svg
-                className="w-6 h-6 text-primary mr-3 mt-1"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                <label htmlFor="name" className="block mb-2 md:mb-3 text-[#283517] text-base md:text-lg">
+                  Your Full Name *
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-5 md:px-6 py-4 md:py-5 text-base md:text-lg rounded-xl border-2 border-[#606C37]/30 focus:outline-none focus:ring-2 focus:ring-[#606C37] focus:border-transparent font-light bg-white"
+                  placeholder="Enter your full name"
                 />
-              </svg>
-              <div>
-                <p className="font-semibold text-gray-800">Phone</p>
-                <a href="tel:+1234567890" className="text-primary hover:text-primary-dark">
-                  (123) 456-7890
-                </a>
               </div>
-            </div>
-            <div className="flex items-start">
-              <svg
-                className="w-6 h-6 text-primary mr-3 mt-1"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+
+              <div>
+                <label htmlFor="email" className="block mb-2 md:mb-3 text-[#283517] text-base md:text-lg">
+                  Your Email Address *
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-5 md:px-6 py-4 md:py-5 text-base md:text-lg rounded-xl border-2 border-[#606C37]/30 focus:outline-none focus:ring-2 focus:ring-[#606C37] focus:border-transparent font-light bg-white"
+                  placeholder="your@email.com"
                 />
-              </svg>
-              <div>
-                <p className="font-semibold text-gray-800">Email</p>
-                <a href="mailto:info@serenepilates.com" className="text-primary hover:text-primary-dark">
-                  info@serenepilates.com
-                </a>
               </div>
-            </div>
+
+              <div>
+                <label htmlFor="phone" className="block mb-2 md:mb-3 text-[#283517] text-base md:text-lg">
+                  Your Phone Number (Optional)
+                </label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  className="w-full px-5 md:px-6 py-4 md:py-5 text-base md:text-lg rounded-xl border-2 border-[#606C37]/30 focus:outline-none focus:ring-2 focus:ring-[#606C37] focus:border-transparent font-light bg-white"
+                  placeholder="(416) 555-0123"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="subject" className="block mb-2 md:mb-3 text-[#283517] text-base md:text-lg">
+                  What is this about? *
+                </label>
+                <select
+                  id="subject"
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-5 md:px-6 py-4 md:py-5 text-base md:text-lg rounded-xl border-2 border-[#606C37]/30 focus:outline-none focus:ring-2 focus:ring-[#606C37] focus:border-transparent font-light bg-white"
+                >
+                  <option value="">Choose a topic...</option>
+                  <option value="general">General Question</option>
+                  <option value="classes">Ask About Classes</option>
+                  <option value="membership">Membership Information</option>
+                  <option value="private">Private Sessions</option>
+                  <option value="corporate">Corporate Programs</option>
+                  <option value="other">Something Else</option>
+                </select>
+              </div>
+
+              <div>
+                <label htmlFor="message" className="block mb-2 md:mb-3 text-[#283517] text-base md:text-lg">
+                  Your Message *
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  rows={5}
+                  className="w-full px-5 md:px-6 py-4 md:py-5 text-base md:text-lg rounded-xl border-2 border-[#606C37]/30 focus:outline-none focus:ring-2 focus:ring-[#606C37] focus:border-transparent resize-none font-light bg-white"
+                  placeholder="Tell us how we can help you..."
+                />
+              </div>
+
+              <button
+                type="submit"
+                className="w-full flex items-center justify-center px-8 md:px-10 py-5 md:py-6 text-base md:text-lg bg-[#BC6C24] text-[#FEFAE0] rounded-full hover:shadow-xl hover:scale-105 transition-all duration-300"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? 'Sending...' : 'Send'} <Send size={20} className="ml-2 md:hidden" /><Send size={22} className="ml-2 hidden md:block" />
+              </button>
+            </form>
           </div>
 
-          {/* Google Maps Embed */}
-          <div className="rounded-lg overflow-hidden shadow-lg h-64">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.2412648750455!2d-73.98823668459395!3d40.74844097932847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b3117469%3A0xd134e199a405a163!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Serene Pilates Location"
-            />
+          {/* Contact Information */}
+          <div className="space-y-6 md:space-y-8">
+            <div className="bg-[rgb(255,255,255)] rounded-3xl shadow-lg p-6 md:p-10 border border-[#606C37]/20">
+              <h2 className="mb-6 md:mb-8 text-[#283517] text-2xl md:text-3xl">Get In Touch</h2>
+              <div className="space-y-6 md:space-y-8">
+                <div className="flex items-start">
+                  <div className="flex-shrink-0 w-14 h-14 md:w-16 md:h-16 rounded-full bg-[#DDA05F]/20 flex items-center justify-center mr-4 md:mr-5">
+                    <MapPin size={24} className="text-[#BC6C24] md:hidden" />
+                    <MapPin size={28} className="text-[#BC6C24] hidden md:block" />
+                  </div>
+                  <div>
+                    <h3 className="mb-2 text-[#283517] text-lg md:text-xl">Visit Our Studio</h3>
+                    <p className="text-[#606C37] font-light leading-relaxed text-base md:text-lg">
+                      1275 Morningside Ave, Unit 30
+                      <br />
+                      Scarborough, ON M1B 3W1
+                      <br />
+                      Canada
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start">
+                  <div className="flex-shrink-0 w-14 h-14 md:w-16 md:h-16 rounded-full bg-[#DDA05F]/20 flex items-center justify-center mr-4 md:mr-5">
+                    <Phone size={24} className="text-[#BC6C24] md:hidden" />
+                    <Phone size={28} className="text-[#BC6C24] hidden md:block" />
+                  </div>
+                  <div>
+                    <h3 className="mb-2 text-[#283517] text-lg md:text-xl">Call Us</h3>
+                    <p className="text-[#606C37] font-light text-base md:text-lg">
+                      <a href="tel:6474782400" className="hover:text-[#BC6C24] transition-colors underline">
+                        (647) 478-2400
+                      </a>
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start">
+                  <div className="flex-shrink-0 w-14 h-14 md:w-16 md:h-16 rounded-full bg-[#DDA05F]/20 flex items-center justify-center mr-4 md:mr-5">
+                    <Mail size={24} className="text-[#BC6C24] md:hidden" />
+                    <Mail size={28} className="text-[#BC6C24] hidden md:block" />
+                  </div>
+                  <div>
+                    <h3 className="mb-2 text-[#283517] text-lg md:text-xl">Email Us</h3>
+                    <p className="text-[#606C37] font-light text-base md:text-lg break-all">
+                      <a
+                        href="mailto:concierge@serenepilates.ca"
+                        className="hover:text-[#BC6C24] transition-colors underline"
+                      >
+                        concierge@serenepilates.ca
+                      </a>
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start">
+                  <div className="flex-shrink-0 w-14 h-14 md:w-16 md:h-16 rounded-full bg-[#DDA05F]/20 flex items-center justify-center mr-4 md:mr-5">
+                    <Clock size={24} className="text-[#BC6C24] md:hidden" />
+                    <Clock size={28} className="text-[#BC6C24] hidden md:block" />
+                  </div>
+                  <div>
+                    <h3 className="mb-2 text-[#283517] text-lg md:text-xl">Studio Hours</h3>
+                    <div className="text-[#606C37] font-light leading-relaxed space-y-1 text-base md:text-lg">
+                      <p>Monday - Thursday</p>
+                      <p>6:30 AM - 12:00 PM, 5:30 PM - 8:30 PM</p>
+                      <p className="mt-2">Friday</p>
+                      <p>7:30 AM - 12:00 PM, 4:00 PM - 6:00 PM</p>
+                      <p className="mt-2">Saturday - Sunday</p>
+                      <p>9:00 AM - 2:00 PM</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Map */}
+            <div className="bg-[rgb(255,255,255)] rounded-3xl shadow-lg p-6 md:p-10 border border-[#606C37]/20">
+              <h2 className="mb-4 md:mb-6 text-[#283517] text-2xl md:text-3xl">Find Us</h2>
+              <div className="w-full h-64 md:h-80 rounded-2xl overflow-hidden border border-[#DDA05F]/20">
+                <iframe
+                  title="Serene Pilates Location"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2882.8374788753547!2d-79.18869842346284!3d43.78865997109671!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4d0b3d0b3d0b3%3A0x1234567890abcdef!2s1275%20Morningside%20Ave%2C%20Scarborough%2C%20ON%20M1B%203W1!5e0!3m2!1sen!2sca!4v1234567890123!5m2!1sen!2sca"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="w-full h-full"
+                ></iframe>
+              </div>
+              <div className="mt-4 text-center">
+                <a
+                  href="https://www.google.com/maps/dir/?api=1&destination=1275+Morningside+Ave+Unit+30+Scarborough+ON+M1B+3W1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-[#BC6C24] hover:text-[#283517] transition-colors font-light text-base md:text-lg"
+                >
+                  <MapPin size={20} className="mr-2" />
+                  Get Directions
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>

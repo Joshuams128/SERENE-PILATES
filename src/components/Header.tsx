@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
@@ -24,15 +25,19 @@ export default function Header() {
   };
 
   return (
-    <nav className="bg-white/98 backdrop-blur-md sticky top-0 z-50 border-b border-[#B8C79D]/15 shadow-sm">
+    <nav className="bg-white sticky top-0 z-50 border-b border-[#B8C79D]/15 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-28">
           <Link href="/" className="flex items-center space-x-2 group">
-            <div className="h-16 md:h-20 flex items-center">
-              {/* Placeholder for logo - replace with actual logo when uploaded */}
-              <div className="text-2xl md:text-3xl text-[rgb(96,108,55)] group-hover:text-[#BC6C24] transition-colors">
-                Serene Pilates
-              </div>
+            <div className="flex items-center">
+              <Image
+                src="/serene-pilates-logo.png"
+                alt="Serene Pilates"
+                width={300}
+                height={120}
+                className="h-20 sm:h-24 md:h-28 lg:h-[11.5rem] w-auto transition-opacity group-hover:opacity-80"
+                priority
+              />
             </div>
           </Link>
 

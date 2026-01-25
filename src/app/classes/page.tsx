@@ -21,7 +21,7 @@ export default function ClassesPage() {
         'Reduces stress and nervous system overload',
         'Improves joint mobility',
       ],
-      image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80',
+      image: '/assets/images/yoga-meditation.png',
     },
     {
       name: 'Release & Reset Yoga',
@@ -35,7 +35,7 @@ export default function ClassesPage() {
         'Supports recovery days',
         'Calms the nervous system',
       ],
-      image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80',
+      image: '/assets/images/yoga-meditation.png',
     },
     {
       name: 'Chakra Flow Yoga',
@@ -49,7 +49,7 @@ export default function ClassesPage() {
         'Encourages mind-body awareness',
         'Enhances breath and focus',
       ],
-      image: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80',
+      image: '/assets/images/yoga-chakra.png',
     },
     {
       name: 'Strength Flow Yoga',
@@ -63,7 +63,7 @@ export default function ClassesPage() {
         'Improves stability and control',
         'Enhances posture',
       ],
-      image: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80',
+      image: '/assets/images/yoga-chakra.png',
     },
     {
       name: 'Serene Balance Flow',
@@ -77,7 +77,7 @@ export default function ClassesPage() {
         'Builds steady strength',
         'Encourages body awareness',
       ],
-      image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80',
+      image: '/assets/images/yoga-meditation.png',
     },
     {
       name: 'Serene Slow Flow',
@@ -91,7 +91,7 @@ export default function ClassesPage() {
         'Improves flexibility',
         'Enhances breathing patterns',
       ],
-      image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80',
+      image: '/assets/images/yoga-meditation.png',
     },
     {
       name: 'Serene Mindful Meditation',
@@ -105,7 +105,7 @@ export default function ClassesPage() {
         'Improves mental clarity',
         'Supports emotional reset',
       ],
-      image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80',
+      image: '/assets/images/yoga-meditation.png',
     },
 
     // MAT CLASSES
@@ -121,7 +121,7 @@ export default function ClassesPage() {
         'Enhances core engagement',
         'Builds body awareness',
       ],
-      image: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80',
+      image: '/assets/images/yoga-chakra.png',
     },
     {
       name: 'Serene Mobility & Release',
@@ -135,7 +135,7 @@ export default function ClassesPage() {
         'Reduces stiffness',
         'Supports recovery',
       ],
-      image: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80',
+      image: '/assets/images/yoga-chakra.png',
     },
     {
       name: 'Serene Stretch + Flow',
@@ -149,7 +149,7 @@ export default function ClassesPage() {
         'Enhances circulation',
         'Promotes relaxation',
       ],
-      image: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80',
+      image: '/assets/images/yoga-chakra.png',
     },
     {
       name: 'Serene Full Body',
@@ -163,7 +163,7 @@ export default function ClassesPage() {
         'Improves coordination',
         'Increases endurance',
       ],
-      image: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80',
+      image: '/assets/images/yoga-chakra.png',
     },
     {
       name: 'Aligned Strength — Upper Body',
@@ -177,7 +177,7 @@ export default function ClassesPage() {
         'Improves posture',
         'Enhances muscular tone',
       ],
-      image: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80',
+      image: '/assets/images/yoga-chakra.png',
     },
     {
       name: 'Grounded Strength — Lower Body',
@@ -191,7 +191,7 @@ export default function ClassesPage() {
         'Improves balance',
         'Enhances hip stability',
       ],
-      image: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80',
+      image: '/assets/images/yoga-chakra.png',
     },
     {
       name: 'Glutes • Core • Burn',
@@ -205,7 +205,7 @@ export default function ClassesPage() {
         'Improves core stability',
         'Builds muscular endurance',
       ],
-      image: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80',
+      image: '/assets/images/yoga-chakra.png',
     },
     {
       name: 'Serene Sculpt',
@@ -219,7 +219,7 @@ export default function ClassesPage() {
         'Builds strength and endurance',
         'Enhances muscle definition',
       ],
-      image: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80',
+      image: '/assets/images/yoga-chakra.png',
     },
     {
       name: 'Serene Foundations — Mat',
@@ -233,7 +233,7 @@ export default function ClassesPage() {
         'Improves core awareness',
         'Establishes strong movement foundations',
       ],
-      image: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80',
+      image: '/assets/images/yoga-chakra.png',
     },
     {
       name: 'Serene Flow — All Levels',
@@ -247,7 +247,7 @@ export default function ClassesPage() {
         'Improves stamina',
         'Supports consistent progression',
       ],
-      image: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80',
+      image: '/assets/images/yoga-chakra.png',
     },
 
     // REFORMER CLASSES
@@ -263,7 +263,7 @@ export default function ClassesPage() {
         'Builds balanced strength',
         'Enhances control',
       ],
-      image: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80',
+      image: '/assets/images/reformer.png',
     },
     {
       name: 'Serene Mobility & Release',
@@ -277,7 +277,7 @@ export default function ClassesPage() {
         'Reduces tightness',
         'Improves movement ease',
       ],
-      image: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80',
+      image: '/assets/images/reformer.png',
     },
     {
       name: 'Serene Stretch + Flow',
@@ -291,7 +291,7 @@ export default function ClassesPage() {
         'Enhances circulation',
         'Supports recovery',
       ],
-      image: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80',
+      image: '/assets/images/reformer.png',
     },
     {
       name: 'Serene Full Body',
@@ -305,7 +305,7 @@ export default function ClassesPage() {
         'Improves coordination',
         'Strengthens core stability',
       ],
-      image: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80',
+      image: '/assets/images/reformer.png',
     },
     {
       name: 'Aligned Strength — Upper Body',
@@ -319,7 +319,7 @@ export default function ClassesPage() {
         'Improves posture',
         'Enhances shoulder stability',
       ],
-      image: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80',
+      image: '/assets/images/reformer.png',
     },
     {
       name: 'Grounded Strength — Lower Body',
@@ -333,7 +333,7 @@ export default function ClassesPage() {
         'Improves joint support',
         'Enhances lower-body stability',
       ],
-      image: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80',
+      image: '/assets/images/reformer.png',
     },
     {
       name: 'Glutes • Core • Burn',
@@ -347,7 +347,7 @@ export default function ClassesPage() {
         'Builds core control',
         'Enhances muscular endurance',
       ],
-      image: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80',
+      image: '/assets/images/reformer.png',
     },
     {
       name: 'Serene Sculpt',
@@ -361,7 +361,7 @@ export default function ClassesPage() {
         'Improves tone',
         'Enhances stamina',
       ],
-      image: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80',
+      image: '/assets/images/reformer.png',
     },
     {
       name: 'Serene Foundations — Reformer',
@@ -375,7 +375,7 @@ export default function ClassesPage() {
         'Improves technique',
         'Establishes safe movement patterns',
       ],
-      image: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80',
+      image: '/assets/images/reformer.png',
     },
     {
       name: 'Serene Flow — All Levels',
@@ -389,7 +389,7 @@ export default function ClassesPage() {
         'Improves endurance',
         'Builds balanced strength',
       ],
-      image: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80',
+      image: '/assets/images/reformer.png',
     },
     {
       name: 'Serene Classic — All Levels',
@@ -403,7 +403,7 @@ export default function ClassesPage() {
         'Builds deep core strength',
         'Enhances movement control',
       ],
-      image: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80',
+      image: '/assets/images/reformer.png',
     },
   ];
 

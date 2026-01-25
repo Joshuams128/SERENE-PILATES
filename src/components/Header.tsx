@@ -29,14 +29,15 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-28">
           <Link href="/" className="flex items-center space-x-2 group">
-            <div className="flex items-center">
+            <div className="relative h-20 sm:h-24 md:h-28 lg:h-[11.5rem] w-auto flex items-center">
               <Image
-                src="/serene-pilates-logo.png"
+                src="/assets/images/serene-pilates-logo.png"
                 alt="Serene Pilates"
-                width={300}
-                height={120}
-                className="h-20 sm:h-24 md:h-28 lg:h-[11.5rem] w-auto transition-opacity group-hover:opacity-80"
+                width={1650}
+                height={1650}
+                className="h-full w-auto object-contain transition-opacity group-hover:opacity-80"
                 priority
+                unoptimized
               />
             </div>
           </Link>

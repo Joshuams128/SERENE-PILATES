@@ -31,7 +31,7 @@ export default function Header() {
           <Link href="/" className="flex items-center space-x-2 group">
             <div className="relative h-20 sm:h-24 md:h-28 lg:h-[11.5rem] w-auto flex items-center">
               <Image
-                src="/assets/images/serene-pilates-logo.png"
+                src="/assets/images/Serene Pilates Logo -10.png"
                 alt="Serene Pilates"
                 width={1650}
                 height={1650}

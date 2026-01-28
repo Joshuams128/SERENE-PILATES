@@ -41,7 +41,7 @@ export default function PricingPage() {
   const sereneBlendPlan = {
     name: 'Serene Blend',
     subtitle: 'Unlimited Everything',
-    price: '$259',
+    price: '$299',
     description: 'Complete access to all classes',
     features: [
       'All reformer classes included',

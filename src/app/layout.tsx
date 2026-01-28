@@ -43,6 +43,30 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* Preload critical images for faster initial page load */}
+        <link 
+          rel="preload" 
+          as="image" 
+          href="/assets/images/reformer.png"
+          // @ts-ignore
+          fetchPriority="high"
+        />
+        <link 
+          rel="preload" 
+          as="image" 
+          href="/assets/images/yoga-meditation.png"
+          // @ts-ignore
+          fetchPriority="high"
+        />
+        <link 
+          rel="preload" 
+          as="image" 
+          href="/assets/images/yoga-chakra.png"
+          // @ts-ignore
+          fetchPriority="high"
+        />
+      </head>
       <body className={inter.className}>
         <StructuredData />
         <div className="min-h-screen flex flex-col bg-[#FEFAE0]">

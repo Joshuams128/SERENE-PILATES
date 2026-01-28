@@ -2,6 +2,7 @@
 
 import { Clock, Users, Activity } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState } from 'react';
 
 export default function ClassesPage() {
@@ -450,10 +451,15 @@ export default function ClassesPage() {
               className="bg-[#FEFAE0] rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 flex flex-col"
             >
               <div className="relative overflow-hidden group h-48">
-                <img
+                <Image
                   src={classItem.image}
                   alt={classItem.name}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  priority={index < 3}
+                  loading={index < 3 ? undefined : "lazy"}
+                  quality={85}
                 />
                 <div className="absolute top-3 left-3">
                   <span className="inline-block px-3 py-1 rounded-full bg-white/95 backdrop-blur-sm text-[#BC6C24] shadow-lg text-sm">

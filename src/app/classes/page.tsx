@@ -2,7 +2,6 @@
 
 import { Clock, Users, Activity } from 'lucide-react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { useState } from 'react';
 
 export default function ClassesPage() {
@@ -416,7 +415,7 @@ export default function ClassesPage() {
 
   return (
     <div className="py-12 md:py-16 bg-[rgba(255,255,255,0.8)]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-[rgba(0,0,0,0)]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h1 className="mb-6 text-[rgb(96,108,55)]">Our Classes</h1>
           <p className="text-[#606C37] max-w-2xl mx-auto font-light text-lg leading-relaxed">
@@ -448,26 +447,14 @@ export default function ClassesPage() {
           {filteredClasses.map((classItem, index) => (
             <div
               key={index}
-              className="bg-[#FEFAE0] rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 flex flex-col"
+              className="bg-gradient-to-br from-[#FEFAE0] via-[#DDA05F]/20 to-[#606C37]/30 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 flex flex-col border border-[#DDA05F]/20"
             >
-              <div className="relative overflow-hidden group h-48">
-                <Image
-                  src={classItem.image}
-                  alt={classItem.name}
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  priority={index < 3}
-                  loading={index < 3 ? undefined : "lazy"}
-                  quality={85}
-                />
-                <div className="absolute top-3 left-3">
-                  <span className="inline-block px-3 py-1 rounded-full bg-white/95 backdrop-blur-sm text-[#BC6C24] shadow-lg text-sm">
+              <div className="p-5 bg-white/90 backdrop-blur-sm flex-1 flex flex-col m-0.5 rounded-2xl">
+                <div className="mb-3">
+                  <span className="inline-block px-3 py-1 rounded-full bg-[#FEFAE0] text-[#BC6C24] text-sm font-medium">
                     {classItem.category}
                   </span>
                 </div>
-              </div>
-              <div className="p-5 bg-[rgb(255,255,255)] flex-1 flex flex-col">
                 <h3 className="mb-3 text-[#283517] text-xl">{classItem.name}</h3>
                 <div className="flex flex-wrap gap-3 mb-4">
                   <div className="flex items-center text-[#606C37] text-sm">

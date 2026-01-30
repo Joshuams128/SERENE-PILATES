@@ -56,7 +56,7 @@ export default function Home() {
               This introductory offer is designed to help you explore our studio, connect with our instructors, and discover the classes that best support your body and goals.
             </p>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-8 md:mb-12 max-w-3xl mx-auto">
+            <div className="max-w-2xl mx-auto mb-8 md:mb-12">
               <div className="p-6 md:p-8 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 text-center">
                 <h3 className="mb-4 text-white text-base md:text-lg font-semibold">Includes:</h3>
                 <ul className="space-y-3 text-[#FEFAE0]/90 text-sm md:text-base">
@@ -68,20 +68,6 @@ export default function Home() {
                   </li>
                   <li className="flex items-center justify-center">
                     <span>A welcoming and supportive studio environment</span>
-                  </li>
-                </ul>
-              </div>
-              <div className="p-6 md:p-8 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 text-center">
-                <h3 className="mb-4 text-white text-base md:text-lg font-semibold">Details:</h3>
-                <ul className="space-y-3 text-[#FEFAE0]/90 text-sm md:text-base">
-                  <li className="flex items-center justify-center">
-                    <span>For new clients only</span>
-                  </li>
-                  <li className="flex items-center justify-center">
-                    <span>Starts on your first booked class</span>
-                  </li>
-                  <li className="flex items-center justify-center">
-                    <span>One-time purchase per person</span>
                   </li>
                 </ul>
               </div>

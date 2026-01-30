@@ -252,7 +252,7 @@ export default function ContactPage() {
               <div className="w-full h-64 md:h-80 rounded-2xl overflow-hidden border border-[#DDA05F]/20">
                 <iframe
                   title="Serene Pilates Location"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2882.8374788753547!2d-79.18869842346284!3d43.78865997109671!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4d0b3d0b3d0b3%3A0x1234567890abcdef!2s1275%20Morningside%20Ave%2C%20Scarborough%2C%20ON%20M1B%203W1!5e0!3m2!1sen!2sca!4v1234567890123!5m2!1sen!2sca"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2882.8076254734695!2d-79.20085772408825!3d43.80331920000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4dbe4c2136ab5%3A0x65efeafe74f9fa1!2sSerene%20Pilates!5e0!3m2!1sen!2sca!4v1738276800000!5m2!1sen!2sca"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
@@ -264,7 +264,7 @@ export default function ContactPage() {
               </div>
               <div className="mt-4 text-center">
                 <a
-                  href="https://www.google.com/maps/dir/?api=1&destination=1275+Morningside+Ave+Unit+30+Scarborough+ON+M1B+3W1"
+                  href="https://www.google.com/maps/place/Serene+Pilates/@43.8033192,-79.1982673,17z/data=!3m1!4b1!4m6!3m5!1s0x89d4dbe4c2136ab5:0x65efeafe74f9fa1!8m2!3d43.8033192!4d-79.1982673!16s%2Fg%2F11yc5xgqfl"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center text-[#BC6C24] hover:text-[#283517] transition-colors font-light text-base md:text-lg"

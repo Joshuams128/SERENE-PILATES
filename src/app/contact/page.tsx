@@ -19,35 +19,33 @@ export default function ContactPage() {
     setIsSubmitting(true);
     
     try {
-      // Create mailto link with form data
-      const subject = encodeURIComponent(`Contact Form: ${formData.subject}`);
-      const body = encodeURIComponent(
-        `Name: ${formData.name}\n` +
-        `Email: ${formData.email}\n` +
-        `Phone: ${formData.phone || 'Not provided'}\n` +
-        `Subject: ${formData.subject}\n\n` +
-        `Message:\n${formData.message}`
-      );
-      
-      // Open mailto link
-      window.location.href = `mailto:concierge@serenepilates.ca?subject=${subject}&body=${body}`;
-      
-      // Show success message
-      toast.success('Message prepared!', {
-        description: 'Your email client should open shortly. If it doesn\'t, please email us directly at concierge@serenepilates.ca',
-        duration: 5000,
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       });
-      
-      // Reset form after a short delay to allow the mailto to trigger
-      setTimeout(() => {
+
+      const result = await response.json();
+
+      if (response.ok) {
+        toast.success('Message sent successfully!', {
+          description: 'We\'ll get back to you as soon as possible.',
+          duration: 5000,
+        });
+        
+        // Reset form
         setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
-        setIsSubmitting(false);
-      }, 1000);
+      } else {
+        throw new Error(result.error || 'Failed to send message');
+      }
     } catch (error) {
-      toast.error('Something went wrong', {
-        description: 'Please try emailing us directly at concierge@serenepilates.ca',
+      toast.error('Failed to send message', {
+        description: 'Please try again or email us directly at concierge@serenepilates.ca',
         duration: 5000,
       });
+    } finally {
       setIsSubmitting(false);
     }
   };

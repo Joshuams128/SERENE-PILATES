@@ -19,7 +19,7 @@ export async function POST(req: NextRequest) {
     // Send email using Resend
     const data = await resend.emails.send({
       from: 'Serene Pilates <noreply@serenepilates.ca>',
-      to: ['concierge@serenepilates.ca', 'joshuams128@gmail.com'],
+      to: ['Isabella@serenepilates.ca', 'joshuams128@gmail.com'],
       replyTo: email,
       subject: `Contact Form: ${subject}`,
       html: `

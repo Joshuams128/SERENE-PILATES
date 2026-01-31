@@ -92,7 +92,7 @@ export default function PricingPage() {
         {
           name: 'Reformer Unlimited',
           classes: 'Unlimited reformer classes',
-          price: '$249',
+          price: '$309',
           features: [
             'All reformer classes included',
             'Beginner to Advanced levels',
@@ -144,7 +144,7 @@ export default function PricingPage() {
         {
           name: 'Mat Unlimited',
           classes: 'Unlimited mat & yoga classes',
-          price: '$139',
+          price: '$169',
           features: [
             'All mat Pilates classes',
             'All yoga classes included',

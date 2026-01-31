@@ -114,7 +114,9 @@ export default function Home() {
             </div>
             
             <Link
-              href="/pricing"
+              href="https://link.hapana.com/index.php?route=directory/directory/buypackage&trid=NDM1NzAwMw==&ref=external&pkId=164026&login=true"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-10 md:px-12 py-5 md:py-6 bg-[#DDA05F] text-[#283517] rounded-full hover:shadow-2xl hover:scale-105 transition-all duration-300 text-lg md:text-xl"
             >
               Start <ArrowRight className="ml-2" size={20} />

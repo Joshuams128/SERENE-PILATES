@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import { Toaster } from "sonner";
 import SkipToContent from "@/components/SkipToContent";
 import StructuredData from "@/components/StructuredData";
+import { Analytics } from "@vercel/analytics/next";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -83,6 +84,7 @@ export default function RootLayout({
           expand={false}
           closeButton
         />
+        <Analytics />
       </body>
     </html>
   );

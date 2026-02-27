@@ -24,13 +24,11 @@ export default function PricingPage() {
     // Mat Memberships
     matCalm: 'https://link.hapana.com/index.php?route=directory/directory/buypackage&trid=NDM1NzAwMw==&ref=external&pkId=135055&login=true',
     matFlow: 'https://link.hapana.com/index.php?route=directory/directory/buypackage&trid=NDM1NzAwMw==&ref=external&pkId=156534&login=true',
-    matGrounded: 'https://link.hapana.com/index.php?route=directory/directory/buypackage&trid=NDM1NzAwMw==&ref=external&pkId=135056&login=true',
     matUnlimited: 'https://link.hapana.com/index.php?route=directory/directory/buypackage&trid=NDM1NzAwMw==&ref=external&pkId=135057&login=true',
     
     // Reformer Memberships
     reformerCore: 'https://link.hapana.com/index.php?route=directory/directory/buypackage&trid=NDM1NzAwMw==&ref=external&pkId=156535&login=true',
     reformerStrength: 'https://link.hapana.com/index.php?route=directory/directory/buypackage&trid=NDM1NzAwMw==&ref=external&pkId=135061&login=true',
-    reformerBalance: 'https://link.hapana.com/index.php?route=directory/directory/buypackage&trid=NDM1NzAwMw==&ref=external&pkId=135058&login=true',
     reformerUnlimited: 'https://link.hapana.com/index.php?route=directory/directory/buypackage&trid=NDM1NzAwMw==&ref=external&pkId=135059&login=true',
     
     // Student/Senior Discounts
@@ -80,19 +78,9 @@ export default function PricingPage() {
           popular: true,
         },
         {
-          name: 'Reformer Balance',
-          classes: '12 classes per month',
-          price: '$289',
-          features: [
-            'All reformer classes included',
-            'Beginner to Advanced levels',
-          ],
-          link: paymentLinks.reformerBalance,
-        },
-        {
           name: 'Reformer Unlimited',
           classes: 'Unlimited reformer classes',
-          price: '$309',
+          price: '$269',
           features: [
             'All reformer classes included',
             'Beginner to Advanced levels',
@@ -131,17 +119,6 @@ export default function PricingPage() {
           popular: true,
         },
         {
-          name: 'Mat Grounded',
-          classes: '12 classes per month',
-          price: '$159',
-          features: [
-            'All mat Pilates classes',
-            'All yoga classes included',
-            'All experience levels',
-          ],
-          link: paymentLinks.matGrounded,
-        },
-        {
           name: 'Mat Unlimited',
           classes: 'Unlimited mat & yoga classes',
           price: '$169',
@@ -164,7 +141,7 @@ export default function PricingPage() {
       description: 'Perfect for getting started',
       features: [
         'Use for any class type',
-        'Valid for 60 days',
+        'Valid for 30 days',
         'No commitment required',
         'Great for trying Pilates',
       ],
@@ -176,9 +153,8 @@ export default function PricingPage() {
       description: 'Our most popular pack',
       features: [
         'Use for any class type',
-        'Valid for 90 days',
+        'Valid for 60 days',
         'Best value per class',
-        'Can be shared with friends',
       ],
       link: paymentLinks.pack10,
       popular: true,
@@ -189,7 +165,7 @@ export default function PricingPage() {
       description: 'Maximum flexibility',
       features: [
         'Use for any class type',
-        'Valid for 120 days',
+        'Valid for 90 days',
         'Biggest savings',
         'Perfect for committed practice',
       ],
@@ -331,7 +307,7 @@ export default function PricingPage() {
                   <h2 className="mb-2 text-[#283517]">{category.category} Membership</h2>
                   <p className="text-[#606C37] font-light">{category.description}</p>
                 </div>
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {category.plans.map((plan, planIndex) => (
                     <div
                       key={planIndex}

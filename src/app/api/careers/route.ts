@@ -67,7 +67,7 @@ export async function POST(req: NextRequest) {
 
     await resend.emails.send({
       from: 'Serene Pilates <noreply@serenepilates.ca>',
-      to: ['concierge@serenepilates.com'],
+      to: ['concierge@serenepilates.ca'],
       replyTo: email,
       subject: `Instructor Application: ${fullName} — ${discipline}`,
       html: `

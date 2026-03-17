@@ -97,6 +97,9 @@ export default function Footer() {
               <Link href="/faq" className="block hover:text-[#F0C799] transition-colors font-light">
                 FAQ
               </Link>
+              <Link href="/careers" className="block hover:text-[#F0C799] transition-colors font-light">
+                Careers
+              </Link>
             </div>
           </div>
           <div>

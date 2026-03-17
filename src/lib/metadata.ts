@@ -44,6 +44,11 @@ export const pageSEO = {
     description: 'Find answers to common questions about Serene Pilates classes, memberships, policies, and more. Everything you need to know before your first class.',
     keywords: 'pilates faq, pilates questions, pilates studio policies, class information, membership questions',
   },
+  careers: {
+    title: 'Teach at Serene | Careers at Serene Pilates Scarborough',
+    description: 'Join the Serene Pilates team. We are looking for passionate Reformer Pilates, Mat Pilates, and Yoga instructors in Scarborough, Ontario.',
+    keywords: 'pilates instructor jobs, yoga teacher jobs, pilates careers, teach pilates scarborough, fitness instructor hiring',
+  },
 };
 
 /**

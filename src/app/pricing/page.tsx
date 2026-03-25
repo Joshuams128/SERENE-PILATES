@@ -2,6 +2,9 @@
 
 import { Check } from 'lucide-react';
 import { useState } from 'react';
+import { createMetadata } from '@/lib/metadata';
+
+export const metadata = createMetadata('pricing');
 
 export default function PricingPage() {
   const [selectedTab, setSelectedTab] = useState<'memberships' | 'packs' | 'dropins'>('memberships');

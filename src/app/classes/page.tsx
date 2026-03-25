@@ -3,6 +3,9 @@
 import { Clock, Users, Activity } from 'lucide-react';
 import Link from 'next/link';
 import { useState } from 'react';
+import { createMetadata } from '@/lib/metadata';
+
+export const metadata = createMetadata('classes');
 
 export default function ClassesPage() {
   const [activeCategory, setActiveCategory] = useState('All');

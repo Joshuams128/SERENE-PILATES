@@ -3,6 +3,9 @@
 import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
 import { useState } from 'react';
 import { toast } from 'sonner';
+import { createMetadata } from '@/lib/metadata';
+
+export const metadata = createMetadata('contact');
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({

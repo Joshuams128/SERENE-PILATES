@@ -3,6 +3,9 @@
 import { useState } from 'react';
 import { toast } from 'sonner';
 import { Heart, Users, BookOpen, Handshake, Sparkles } from 'lucide-react';
+import { createMetadata } from '@/lib/metadata';
+
+export const metadata = createMetadata('careers');
 
 export default function CareersPage() {
   const [formData, setFormData] = useState({

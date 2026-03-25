@@ -2,6 +2,9 @@
 
 import { useEffect } from 'react';
 import { Clock, Users } from 'lucide-react';
+import { createMetadata } from '@/lib/metadata';
+
+export const metadata = createMetadata('booking');
 
 // Declare Hapana widget type for TypeScript
 declare global {

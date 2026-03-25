@@ -8,6 +8,9 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
+import { createMetadata } from '@/lib/metadata';
+
+export const metadata = createMetadata('faq');
 
 export default function FAQPage() {
   const faqs = [

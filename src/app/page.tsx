@@ -1,6 +1,9 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight, Heart, Users, Calendar } from 'lucide-react';
+import { createMetadata } from '@/lib/metadata';
+
+export const metadata = createMetadata('home');
 
 export default function Home() {
   return (

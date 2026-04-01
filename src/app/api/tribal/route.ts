@@ -25,7 +25,7 @@ export async function POST(req: NextRequest) {
       html: `
         <div style="font-family: 'Helvetica Neue', Arial, sans-serif; max-width: 600px; margin: 0 auto; background-color: #FEFAE0; border-radius: 16px; overflow: hidden;">
           <div style="background: linear-gradient(135deg, #283517, #606C37); padding: 40px 30px; text-align: center;">
-            <h1 style="color: #FEFAE0; font-size: 28px; font-weight: 300; margin: 0 0 8px 0; letter-spacing: -0.02em;">Serene Pilates</h1>
+            <img src="https://www.serenepilates.ca/assets/images/Serene%20Pilates%20Logo%20-10.png" alt="Serene Pilates" style="height: 80px; margin: 0 auto 12px auto; display: block;" />
             <p style="color: #DDA05F; font-size: 14px; margin: 0; letter-spacing: 0.1em; text-transform: uppercase;">Exclusive Offer</p>
           </div>
 
@@ -59,7 +59,7 @@ export async function POST(req: NextRequest) {
           </div>
 
           <div style="background-color: #283517; padding: 24px 30px; text-align: center;">
-            <p style="color: #FEFAE0; font-size: 13px; font-weight: 300; margin: 0 0 8px 0;">Serene Pilates</p>
+            <img src="https://www.serenepilates.ca/assets/images/Serene%20Pilates%20Logo%20-10.png" alt="Serene Pilates" style="height: 60px; margin: 0 auto 12px auto; display: block;" />
             <p style="color: #606C37; font-size: 12px; margin: 0 0 8px 0;">1275 Morningside Ave, Unit 30, Scarborough, ON M1B 3W1</p>
             <p style="color: #DDA05F; font-size: 13px; margin: 0 0 12px 0;">
               <a href="tel:6474782400" style="color: #DDA05F; text-decoration: none;">(647) 478-2400</a>

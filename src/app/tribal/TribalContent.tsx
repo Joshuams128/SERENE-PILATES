@@ -112,7 +112,7 @@ export default function TribalContent() {
           <p className="mb-3 md:mb-4 text-xl md:text-2xl text-[#FEFAE0]/90 drop-shadow-md font-light">
             Feel stronger, move better, and prepare with intention.
           </p>
-          <p className="mb-8 md:mb-10 text-base md:text-lg text-[#DDA05F] font-light drop-shadow leading-relaxed">
+          <p className="mb-8 md:mb-10 text-base md:text-lg text-white font-light drop-shadow leading-relaxed">
             Register to receive your exclusive code for 5 complimentary Pilates classes.
           </p>
           <button

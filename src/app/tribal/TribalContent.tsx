@@ -8,6 +8,7 @@ import Image from 'next/image';
 export default function TribalContent() {
   const [formData, setFormData] = useState({
     firstName: '',
+    lastName: '',
     email: '',
     phone: '',
   });
@@ -195,20 +196,38 @@ export default function TribalContent() {
 
           <div className="bg-[rgb(255,255,255)] rounded-3xl shadow-lg p-6 md:p-10 border border-[#606C37]/20">
             <form onSubmit={handleSubmit} className="space-y-5 md:space-y-6">
-              <div>
-                <label htmlFor="firstName" className="block mb-2 md:mb-3 text-[#283517] text-base md:text-lg">
-                  First Name *
-                </label>
-                <input
-                  type="text"
-                  id="firstName"
-                  name="firstName"
-                  value={formData.firstName}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-5 md:px-6 py-4 md:py-5 text-base md:text-lg rounded-xl border-2 border-[#606C37]/30 focus:outline-none focus:ring-2 focus:ring-[#606C37] focus:border-transparent font-light bg-white"
-                  placeholder="Your first name"
-                />
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 md:gap-6">
+                <div>
+                  <label htmlFor="firstName" className="block mb-2 md:mb-3 text-[#283517] text-base md:text-lg">
+                    First Name *
+                  </label>
+                  <input
+                    type="text"
+                    id="firstName"
+                    name="firstName"
+                    value={formData.firstName}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-5 md:px-6 py-4 md:py-5 text-base md:text-lg rounded-xl border-2 border-[#606C37]/30 focus:outline-none focus:ring-2 focus:ring-[#606C37] focus:border-transparent font-light bg-white"
+                    placeholder="First name"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="lastName" className="block mb-2 md:mb-3 text-[#283517] text-base md:text-lg">
+                    Last Name *
+                  </label>
+                  <input
+                    type="text"
+                    id="lastName"
+                    name="lastName"
+                    value={formData.lastName}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-5 md:px-6 py-4 md:py-5 text-base md:text-lg rounded-xl border-2 border-[#606C37]/30 focus:outline-none focus:ring-2 focus:ring-[#606C37] focus:border-transparent font-light bg-white"
+                    placeholder="Last name"
+                  />
+                </div>
               </div>
 
               <div>
@@ -247,7 +266,7 @@ export default function TribalContent() {
                 className="w-full flex items-center justify-center px-8 md:px-10 py-5 md:py-6 text-base md:text-lg bg-[#BC6C24] text-[#FEFAE0] rounded-full hover:shadow-xl hover:scale-105 transition-all duration-300"
                 disabled={isSubmitting}
               >
-                {isSubmitting ? 'Sending...' : 'Send Me My Code'} <ArrowRight size={20} className="ml-2" />
+                {isSubmitting ? 'Sending...' : 'Unlock My Code'} <ArrowRight size={20} className="ml-2" />
               </button>
             </form>
           </div>

@@ -6,16 +6,16 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const { firstName, email, phone } = body;
+    const { firstName, lastName, email, phone } = body;
 
-    if (!firstName || !email) {
+    if (!firstName || !lastName || !email) {
       return NextResponse.json(
         { error: 'Missing required fields' },
         { status: 400 }
       );
     }
 
-    const promoCode = 'TRIBAL5FREE';
+    const promoCode = 'TRIBAL5';
 
     // Send promo code email to registrant
     await resend.emails.send({
@@ -42,12 +42,12 @@ export async function POST(req: NextRequest) {
               <p style="color: #FEFAE0; font-size: 36px; font-weight: 600; letter-spacing: 0.08em; margin: 0;">${promoCode}</p>
             </div>
 
-            <div style="background-color: #f8f6f0; border-radius: 12px; padding: 24px; margin: 0 0 32px 0;">
-              <p style="color: #283517; font-size: 15px; font-weight: 400; margin: 0 0 16px 0;">How to redeem:</p>
-              <ol style="color: #606C37; font-size: 14px; line-height: 2; margin: 0; padding-left: 20px;">
-                <li>Visit our booking page or call us at (647) 478-2400</li>
-                <li>Provide your promo code when booking</li>
-                <li>Enjoy your 5 complimentary classes</li>
+            <div style="background-color: #ffffff; border-radius: 12px; padding: 24px; margin: 0 0 32px 0;">
+              <p style="color: #000000; font-size: 15px; font-weight: 400; margin: 0 0 16px 0;">How to redeem:</p>
+              <ol style="color: #000000; font-size: 14px; line-height: 2; margin: 0; padding-left: 20px;">
+                <li>Visit our <a href="https://www.serenepilates.ca/booking" style="color: #BC6C24; text-decoration: underline;">booking page</a> or download the <a href="https://apps.apple.com/au/app/serene-pilates/id6751634676" style="color: #BC6C24; text-decoration: underline;">Serene Pilates app</a></li>
+                <li>Use your promo code at checkout</li>
+                <li>Enjoy your 5 complimentary classes — please arrive 5–10 minutes early</li>
               </ol>
             </div>
 
@@ -59,8 +59,18 @@ export async function POST(req: NextRequest) {
           </div>
 
           <div style="background-color: #283517; padding: 24px 30px; text-align: center;">
-            <p style="color: #FEFAE0; font-size: 13px; font-weight: 300; margin: 0 0 4px 0;">Serene Pilates</p>
-            <p style="color: #606C37; font-size: 12px; margin: 0;">1275 Morningside Ave, Unit 30, Scarborough, ON M1B 3W1</p>
+            <p style="color: #FEFAE0; font-size: 13px; font-weight: 300; margin: 0 0 8px 0;">Serene Pilates</p>
+            <p style="color: #606C37; font-size: 12px; margin: 0 0 8px 0;">1275 Morningside Ave, Unit 30, Scarborough, ON M1B 3W1</p>
+            <p style="color: #DDA05F; font-size: 13px; margin: 0 0 12px 0;">
+              <a href="tel:6474782400" style="color: #DDA05F; text-decoration: none;">(647) 478-2400</a>
+            </p>
+            <p style="margin: 0;">
+              <a href="https://www.instagram.com/serenepilatesstudios/" style="color: #FEFAE0; text-decoration: none; font-size: 13px; margin: 0 8px;">Instagram</a>
+              <span style="color: #606C37;">&#183;</span>
+              <a href="https://www.facebook.com/share/1LShwszRC7/" style="color: #FEFAE0; text-decoration: none; font-size: 13px; margin: 0 8px;">Facebook</a>
+              <span style="color: #606C37;">&#183;</span>
+              <a href="https://www.tiktok.com/@serenepilates" style="color: #FEFAE0; text-decoration: none; font-size: 13px; margin: 0 8px;">TikTok</a>
+            </p>
           </div>
         </div>
       `,
@@ -71,13 +81,13 @@ export async function POST(req: NextRequest) {
       from: 'Serene Pilates <noreply@serenepilates.ca>',
       to: ['concierge@serenepilates.ca'],
       replyTo: email,
-      subject: `Tribal Campaign Registration: ${firstName}`,
+      subject: `Tribal Campaign Registration: ${firstName} ${lastName}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <h2 style="color: #606C37;">New Tribal Campaign Registration</h2>
 
           <div style="background-color: #f5f5f5; padding: 20px; border-radius: 10px; margin: 20px 0;">
-            <p style="margin: 10px 0;"><strong>First Name:</strong> ${firstName}</p>
+            <p style="margin: 10px 0;"><strong>Name:</strong> ${firstName} ${lastName}</p>
             <p style="margin: 10px 0;"><strong>Email:</strong> ${email}</p>
             <p style="margin: 10px 0;"><strong>Phone:</strong> ${phone || 'Not provided'}</p>
             <p style="margin: 10px 0;"><strong>Promo Code Sent:</strong> ${promoCode}</p>

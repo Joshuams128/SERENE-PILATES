@@ -68,7 +68,7 @@ export default function TribalContent() {
           <p className="text-[#606C37] font-light text-lg md:text-xl leading-relaxed mb-8">
             Your exclusive code is on its way. Use it to claim your 5 complimentary classes and book your first session.
           </p>
-          <div className="bg-white rounded-2xl p-6 md:p-8 shadow-md border border-[#606C37]/10">
+          <div className="bg-white rounded-2xl p-6 md:p-8 shadow-md border border-[#606C37]/10 mb-8">
             <p className="text-[#283517] text-sm md:text-base font-light leading-relaxed">
               Didn&apos;t receive it? Check your spam folder or contact us at{' '}
               <a href="mailto:concierge@serenepilates.ca" className="text-[#BC6C24] underline hover:text-[#283517] transition-colors">
@@ -76,6 +76,12 @@ export default function TribalContent() {
               </a>
             </p>
           </div>
+          <a
+            href="/"
+            className="inline-flex items-center justify-center px-10 md:px-12 py-5 md:py-6 text-lg md:text-xl bg-[#BC6C24] text-[#FEFAE0] rounded-full hover:shadow-xl hover:scale-105 transition-all duration-300"
+          >
+            Return Home
+          </a>
         </div>
       </div>
     );

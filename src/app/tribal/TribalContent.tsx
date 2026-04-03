@@ -98,14 +98,11 @@ export default function TribalContent() {
           priority
           quality={85}
           sizes="100vw"
-          className="object-cover blur-[2px]"
+          className="object-cover blur-[1px]"
         />
         {/* Dark overlay with subtle warm tint */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#283517]/70 via-[#283517]/55 to-[#283517]/75"></div>
 
-        {/* Subtle decorative accents — carnival-inspired warmth */}
-        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#BC6C24] via-[#DDA05F] to-[#BC6C24]"></div>
-        <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-[#DDA05F] via-[#BC6C24] to-[#DDA05F]"></div>
 
         <div className="relative z-10 text-center max-w-3xl px-6 py-16">
           <div className="inline-flex items-center gap-2 bg-[#BC6C24]/90 backdrop-blur-sm text-[#FEFAE0] px-5 py-2 rounded-full text-sm md:text-base mb-8 shadow-lg">

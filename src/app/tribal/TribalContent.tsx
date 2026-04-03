@@ -92,8 +92,8 @@ export default function TribalContent() {
       {/* Hero Section */}
       <section className="relative min-h-[600px] md:min-h-[700px] flex items-center justify-center overflow-hidden">
         <Image
-          src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1600&q=80"
-          alt="Pilates studio"
+          src="/assets/images/tribalbg.jpeg"
+          alt="Serene x Tribal"
           fill
           priority
           quality={85}

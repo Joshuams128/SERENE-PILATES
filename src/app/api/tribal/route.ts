@@ -46,7 +46,7 @@ export async function POST(req: NextRequest) {
               <p style="color: #000000; font-size: 15px; font-weight: 400; margin: 0 0 16px 0;">How to redeem:</p>
               <ol style="color: #000000; font-size: 14px; line-height: 2; margin: 0; padding-left: 20px;">
                 <li>Visit our <a href="https://www.serenepilates.ca/booking" style="color: #BC6C24; text-decoration: underline;">booking page</a> or download the <a href="https://apps.apple.com/au/app/serene-pilates/id6751634676" style="color: #BC6C24; text-decoration: underline;">Serene Pilates app</a></li>
-                <li>Use your promo code at checkout</li>
+                <li>Select the Serene x Tribal package and use your promo code at checkout</li>
                 <li>Enjoy your 5 complimentary classes — please arrive 5–10 minutes early</li>
               </ol>
             </div>

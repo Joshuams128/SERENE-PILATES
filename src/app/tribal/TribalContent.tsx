@@ -92,13 +92,13 @@ export default function TribalContent() {
       {/* Hero Section */}
       <section className="relative min-h-[600px] md:min-h-[700px] flex items-center justify-center overflow-hidden">
         <Image
-          src="/assets/images/tribalbg.jpeg"
+          src="/assets/images/tribalbg.JPG"
           alt="Serene x Tribal"
           fill
           priority
           quality={85}
           sizes="100vw"
-          className="object-cover"
+          className="object-cover blur-[2px]"
         />
         {/* Dark overlay with subtle warm tint */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#283517]/70 via-[#283517]/55 to-[#283517]/75"></div>

@@ -34,6 +34,10 @@ export default function PricingContent() {
     // Student/Senior Discounts
     studentSeniorMat: 'https://link.hapana.com/index.php?route=directory/directory/buypackage&trid=NDM1NzAwMw==&ref=external&pkId=156538&login=true',
     studentSeniorReformer: 'https://link.hapana.com/index.php?route=directory/directory/buypackage&trid=NDM1NzAwMw==&ref=external&pkId=156539&login=true',
+
+    // Summer Offers — TODO: replace with final URLs from client (placeholder for now)
+    summerNewMember: 'https://link.hapana.com/index.php?route=directory/directory/buypackage&trid=NDM1NzAwMw==&ref=external&pkId=135061&login=true',
+    summerStudent: 'https://link.hapana.com/index.php?route=directory/directory/buypackage&trid=NDM1NzAwMw==&ref=external&pkId=135061&login=true',
   };
 
   const sereneBlendPlan = {
@@ -134,6 +138,35 @@ export default function PricingContent() {
     },
   ];
 
+  const summerOffers = [
+    {
+      name: 'New Member Summer Membership',
+      price: '$125',
+      description: 'Your summer glow-up starts here. Feel stronger, lighter, and more connected to yourself with unlimited movement in our calming boutique studio space.',
+      features: [
+        'Unlimited Mat, Reformer & Yoga',
+        '1 class per day',
+        '2-month commitment required',
+      ],
+      cta: 'Join the Summer Offer',
+      finePrint: 'No refunds, holds, pauses, transfers, or extensions. Subject to studio policies and availability.',
+      link: paymentLinks.summerNewMember,
+    },
+    {
+      name: 'Summer Student Membership',
+      price: '$110',
+      description: 'The perfect summer reset for busy students looking to stay toned, grounded, and energized all season long.',
+      features: [
+        'Unlimited Mat, Reformer & Yoga',
+        '1 class per day',
+        '2-month commitment required',
+      ],
+      cta: 'Claim Student Offer',
+      finePrint: 'Valid student ID may be requested. No refunds, holds, pauses, transfers, or extensions. Subject to studio policies and availability.',
+      link: paymentLinks.summerStudent,
+    },
+  ];
+
   const classPacks = [
     {
       name: '5 Class Pack',
@@ -176,7 +209,7 @@ export default function PricingContent() {
   const dropIns = [
     {
       name: 'Drop In: Mat',
-      price: '$30',
+      price: '$19',
       description: 'Single mat Pilates class',
       features: [
         'No commitment required',
@@ -188,7 +221,7 @@ export default function PricingContent() {
     },
     {
       name: 'Drop In: Reformer',
-      price: '$40',
+      price: '$28',
       description: 'Single reformer class',
       features: [
         'No commitment required',
@@ -200,7 +233,7 @@ export default function PricingContent() {
     },
     {
       name: 'Drop In: Yoga',
-      price: '$22',
+      price: '$16',
       description: 'Single yoga class',
       features: [
         'No commitment required',
@@ -260,6 +293,46 @@ export default function PricingContent() {
 
         {selectedTab === 'memberships' ? (
           <div className="space-y-16">
+            {/* Summer Offers - Above existing membership pricing */}
+            <div>
+              <div className="text-center mb-10">
+                <h2 className="mb-2 text-[#283517]">Serene Summer Starts Here</h2>
+              </div>
+              <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                {summerOffers.map((offer, index) => (
+                  <div
+                    key={index}
+                    className="relative rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-gradient-to-br from-[#DDA05F] to-[#BC6C24] text-[#FEFAE0] flex flex-col"
+                  >
+                    <div className="text-center mb-6">
+                      <h3 className="mb-3 text-[#FEFAE0]">{offer.name}</h3>
+                      <p className="text-2xl mb-2 text-[#FEFAE0]">{offer.price}<span className="text-sm text-[#FEFAE0]/70">/month + HST</span></p>
+                    </div>
+                    <p className="text-center font-light text-[#FEFAE0] mb-6 leading-relaxed">{offer.description}</p>
+                    <ul className="space-y-3 mb-8">
+                      {offer.features.map((feature, idx) => (
+                        <li key={idx} className="flex items-start text-sm text-[#FEFAE0]">
+                          <Check size={18} className="mr-2 flex-shrink-0 mt-0.5 text-[#FEFAE0]" />
+                          <span className="font-light">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="mt-auto">
+                      <a
+                        href={offer.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block w-full text-center px-6 py-3 rounded-full bg-[#FEFAE0] text-[#283517] hover:shadow-lg hover:scale-105 transition-all duration-300"
+                      >
+                        {offer.cta}
+                      </a>
+                      <p className="text-xs font-light text-[#FEFAE0]/70 mt-4 text-center leading-relaxed">{offer.finePrint}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
             {/* Serene Blend - Featured First */}
             <div>
               <div className="text-center mb-12">

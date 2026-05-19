@@ -4,7 +4,7 @@ import { Check } from 'lucide-react';
 import { useState } from 'react';
 
 export default function PricingContent() {
-  const [selectedTab, setSelectedTab] = useState<'memberships' | 'packs' | 'dropins'>('memberships');
+  const [selectedTab, setSelectedTab] = useState<'summer' | 'memberships' | 'packs' | 'dropins'>('summer');
 
   // Payment links
   const paymentLinks = {
@@ -259,6 +259,16 @@ export default function PricingContent() {
         <div className="flex justify-center mb-12 md:mb-16">
           <div className="inline-flex bg-[rgba(254,250,224,0)] rounded-full p-2 shadow-lg flex-wrap justify-center border border-[#DDA05F]/20 gap-2">
             <button
+              onClick={() => setSelectedTab('summer')}
+              className={`px-6 md:px-8 py-3 rounded-full transition-all duration-300 text-sm md:text-base ${
+                selectedTab === 'summer'
+                  ? 'bg-[#BC6C24] text-[#FEFAE0] shadow-lg'
+                  : 'text-[#606C37] hover:text-[#283517]'
+              }`}
+            >
+              Summer Offers
+            </button>
+            <button
               onClick={() => setSelectedTab('memberships')}
               className={`px-6 md:px-8 py-3 rounded-full transition-all duration-300 text-sm md:text-base ${
                 selectedTab === 'memberships'
@@ -291,48 +301,47 @@ export default function PricingContent() {
           </div>
         </div>
 
-        {selectedTab === 'memberships' ? (
-          <div className="space-y-16">
-            {/* Summer Offers - Above existing membership pricing */}
-            <div>
-              <div className="text-center mb-10">
-                <h2 className="mb-2 text-[#283517]">Serene Summer Starts Here</h2>
-              </div>
-              <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-                {summerOffers.map((offer, index) => (
-                  <div
-                    key={index}
-                    className="relative rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-gradient-to-br from-[#DDA05F] to-[#BC6C24] text-[#FEFAE0] flex flex-col"
-                  >
-                    <div className="text-center mb-6">
-                      <h3 className="mb-3 text-[#FEFAE0]">{offer.name}</h3>
-                      <p className="text-2xl mb-2 text-[#FEFAE0]">{offer.price}<span className="text-sm text-[#FEFAE0]/70">/month + HST</span></p>
-                    </div>
-                    <p className="text-center font-light text-[#FEFAE0] mb-6 leading-relaxed">{offer.description}</p>
-                    <ul className="space-y-3 mb-8">
-                      {offer.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-start text-sm text-[#FEFAE0]">
-                          <Check size={18} className="mr-2 flex-shrink-0 mt-0.5 text-[#FEFAE0]" />
-                          <span className="font-light">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <div className="mt-auto">
-                      <a
-                        href={offer.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="block w-full text-center px-6 py-3 rounded-full bg-[#FEFAE0] text-[#283517] hover:shadow-lg hover:scale-105 transition-all duration-300"
-                      >
-                        {offer.cta}
-                      </a>
-                      <p className="text-xs font-light text-[#FEFAE0]/70 mt-4 text-center leading-relaxed">{offer.finePrint}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
+        {selectedTab === 'summer' ? (
+          <div>
+            <div className="text-center mb-12">
+              <h2 className="mb-3 text-[#283517]">Serene Summer Starts Here</h2>
             </div>
-
+            <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+              {summerOffers.map((offer, index) => (
+                <div
+                  key={index}
+                  className="relative rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-gradient-to-br from-[#DDA05F] to-[#BC6C24] text-[#FEFAE0] flex flex-col"
+                >
+                  <div className="text-center mb-6">
+                    <h3 className="mb-3 text-[#FEFAE0]">{offer.name}</h3>
+                    <p className="text-2xl mb-2 text-[#FEFAE0]">{offer.price}<span className="text-sm text-[#FEFAE0]/70">/month + HST</span></p>
+                  </div>
+                  <p className="text-center font-light text-[#FEFAE0] mb-6 leading-relaxed">{offer.description}</p>
+                  <ul className="space-y-3 mb-8">
+                    {offer.features.map((feature, idx) => (
+                      <li key={idx} className="flex items-start text-sm text-[#FEFAE0]">
+                        <Check size={18} className="mr-2 flex-shrink-0 mt-0.5 text-[#FEFAE0]" />
+                        <span className="font-light">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="mt-auto">
+                    <a
+                      href={offer.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block w-full text-center px-6 py-3 rounded-full bg-[#FEFAE0] text-[#283517] hover:shadow-lg hover:scale-105 transition-all duration-300"
+                    >
+                      {offer.cta}
+                    </a>
+                    <p className="text-xs font-light text-[#FEFAE0]/70 mt-4 text-center leading-relaxed">{offer.finePrint}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ) : selectedTab === 'memberships' ? (
+          <div className="space-y-16">
             {/* Serene Blend - Featured First */}
             <div>
               <div className="text-center mb-12">

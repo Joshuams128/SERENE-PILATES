@@ -140,29 +140,31 @@ export default function PricingContent() {
 
   const summerOffers = [
     {
-      name: 'New Member Summer Membership',
-      price: '$125',
-      description: 'Your summer glow-up starts here. Feel stronger, lighter, and more connected to yourself with unlimited movement in our calming boutique studio space.',
+      name: 'Serene Collective Membership',
+      price: '$145',
+      description: 'Your Pilates routine continues here. Stay stronger, grounded, and connected with unlimited movement in our calming boutique studio space.',
       features: [
         'Unlimited Mat, Reformer & Yoga',
         '1 class per day',
         '2-month commitment required',
+        'Eligible holds after 1 active month',
       ],
-      cta: 'Join the Summer Offer',
-      finePrint: 'No refunds, holds, pauses, transfers, or extensions. Subject to studio policies and availability.',
+      cta: 'Join the Serene Collective',
+      finePrint: 'Continues month-to-month after the 2-month commitment. 30 days written cancellation notice required by email. Subject to studio policies, class availability, and membership agreement terms.',
       link: paymentLinks.summerNewMember,
     },
     {
-      name: 'Summer Student Membership',
-      price: '$110',
-      description: 'The perfect summer reset for busy students looking to stay toned, grounded, and energized all season long.',
+      name: 'Serene Collective Preferred Membership',
+      price: '$125',
+      description: 'A preferred monthly rate for students, nurses, and public service members looking to stay consistent with their wellness routine.',
       features: [
         'Unlimited Mat, Reformer & Yoga',
         '1 class per day',
         '2-month commitment required',
+        'Eligible holds after 1 active month',
       ],
-      cta: 'Claim Student Offer',
-      finePrint: 'Valid student ID may be requested. No refunds, holds, pauses, transfers, or extensions. Subject to studio policies and availability.',
+      cta: 'Claim Preferred Rate',
+      finePrint: 'Valid proof of eligibility required. Continues month-to-month after the 2-month commitment. 30 days written cancellation notice required by email. Subject to studio policies, class availability, and membership agreement terms.',
       link: paymentLinks.summerStudent,
     },
   ];
@@ -266,7 +268,7 @@ export default function PricingContent() {
                   : 'text-[#606C37] hover:text-[#283517]'
               }`}
             >
-              Summer Offers
+              Serene Collective
             </button>
             <button
               onClick={() => setSelectedTab('memberships')}
@@ -304,7 +306,8 @@ export default function PricingContent() {
         {selectedTab === 'summer' ? (
           <div>
             <div className="text-center mb-12">
-              <h2 className="mb-3 text-[#283517]">Serene Summer Starts Here</h2>
+              <h2 className="mb-3 text-[#283517]">Serene Collective Memberships</h2>
+              <p className="text-[#606C37] font-light text-lg max-w-2xl mx-auto">Continue your Serene routine beyond the summer with flexible monthly memberships designed for consistency, progress, and long-term wellness.</p>
             </div>
             <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
               {summerOffers.map((offer, index) => (

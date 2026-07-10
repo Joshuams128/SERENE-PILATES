@@ -309,7 +309,7 @@ export default function PricingContent() {
               <h2 className="mb-3 text-[#283517]">Serene Collective Memberships</h2>
               <p className="text-[#606C37] font-light text-lg max-w-2xl mx-auto">Continue your Serene routine beyond the summer with flexible monthly memberships designed for consistency, progress, and long-term wellness.</p>
             </div>
-            <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-12">
               {summerOffers.map((offer, index) => (
                 <div
                   key={index}
@@ -341,6 +341,26 @@ export default function PricingContent() {
                   </div>
                 </div>
               ))}
+            </div>
+
+            {/* Membership Policy Highlights */}
+            <div className="max-w-4xl mx-auto bg-[#FEFAE0] rounded-2xl p-8 shadow-lg">
+              <h3 className="text-[#283517] text-xl font-semibold mb-6 text-center">Membership Policy Highlights</h3>
+              <div className="grid md:grid-cols-2 gap-6 text-[#606C37] text-sm leading-relaxed">
+                <div>
+                  <p className="mb-3"><strong>Late Cancel Fee:</strong> $5</p>
+                  <p className="mb-3"><strong>No-Show Fee:</strong> $10</p>
+                  <p className="mb-3"><strong>Failed Payment Handling Fee:</strong> $3.50 per failed payment attempt</p>
+                </div>
+                <div>
+                  <p className="mb-3">Waitlist members may be moved into class up to 2 hours before class start time if a spot becomes available.</p>
+                  <p className="mb-3">A 10-minute grace period may apply for late arrivals, but late entry is not guaranteed for safety and class flow.</p>
+                </div>
+              </div>
+              <div className="mt-6 pt-6 border-t border-[#606C37]/20 text-[#606C37] text-sm leading-relaxed">
+                <p className="mb-3">Memberships are non-transferable and account sharing is not permitted.</p>
+                <p>All cancellations, holds, extensions, and membership changes must be requested by email at <strong>concierge@serenepilates.ca</strong> and confirmed in writing.</p>
+              </div>
             </div>
           </div>
         ) : selectedTab === 'memberships' ? (

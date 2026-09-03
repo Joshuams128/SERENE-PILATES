@@ -42,9 +42,12 @@ export default function GiftCardsContent() {
         </div>
 
         {/* Gift Card Widget */}
-        <div className="max-w-6xl mx-auto mb-12">
-          <div className="bg-[rgb(96,108,55)] rounded-3xl shadow-lg p-6 md:p-10 border border-[#606C37]/20 bg-[rgba(254,250,224,0.36)]">
-            <div id="gift-card-container" className="min-h-[600px]">
+        <div className="max-w-6xl mx-auto mb-12 -mx-4 sm:mx-auto">
+          <div
+            className="bg-[rgb(96,108,55)] rounded-3xl shadow-lg p-3 sm:p-6 md:p-10 border border-[#606C37]/20 bg-[rgba(254,250,224,0.36)] overflow-x-auto"
+            style={{ WebkitOverflowScrolling: 'touch' }}
+          >
+            <div id="gift-card-container" className="min-h-[600px] min-w-[340px]">
               <hapana-widget
                 data-type="giftCards"
                 widget-id="Yko4MlNGWFVSN3ppdlRvdi9LMU9NQT09"

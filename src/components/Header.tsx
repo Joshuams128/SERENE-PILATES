@@ -15,6 +15,7 @@ export default function Header() {
     { path: "/classes", label: "Classes" },
     { path: "/booking", label: "Book Now" },
     { path: "/pricing", label: "Pricing" },
+    { path: "/gift-cards", label: "Gift Cards" },
     { path: "/about", label: "About" },
     { path: "/contact", label: "Contact" },
     { path: "/faq", label: "FAQ" },

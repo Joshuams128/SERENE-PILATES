@@ -49,6 +49,11 @@ export const pageSEO = {
     description: 'Join the Serene Pilates team. We are looking for passionate Reformer Pilates, Mat Pilates, and Yoga instructors in Scarborough, Ontario.',
     keywords: 'pilates instructor jobs, yoga teacher jobs, pilates careers, teach pilates scarborough, fitness instructor hiring',
   },
+  'gift-cards': {
+    title: 'Gift Cards | Serene Pilates Scarborough',
+    description: 'Give the gift of movement and wellness. Purchase a Serene Pilates gift card for reformer, mat, or specialty classes in Scarborough, Ontario.',
+    keywords: 'pilates gift card, gift a class, scarborough pilates gift, wellness gift card, serene pilates gift',
+  },
 };
 
 /**

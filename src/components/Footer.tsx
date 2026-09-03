@@ -85,6 +85,9 @@ export default function Footer() {
               <Link href="/pricing" className="block hover:text-[#F0C799] transition-colors font-light">
                 Pricing
               </Link>
+              <Link href="/gift-cards" className="block hover:text-[#F0C799] transition-colors font-light">
+                Gift Cards
+              </Link>
               <Link href="/booking" className="block hover:text-[#F0C799] transition-colors font-light">
                 Book Now
               </Link>

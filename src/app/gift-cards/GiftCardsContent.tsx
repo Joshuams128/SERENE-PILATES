@@ -14,18 +14,20 @@ declare global {
 
 export default function GiftCardsContent() {
   useEffect(() => {
-    // Load widget script
+    // Avoid re-injecting the widget script if it's already loaded (e.g. after
+    // client-side navigation away from and back to this page), since the
+    // widget registers a custom element and errors if defined twice.
+    if (
+      customElements.get('hapana-widget') ||
+      document.querySelector('script[src="https://widget.hapana.com/hapana_widget.js"]')
+    ) {
+      return;
+    }
+
     const script = document.createElement('script');
     script.src = 'https://widget.hapana.com/hapana_widget.js';
     script.async = true;
     document.body.appendChild(script);
-
-    return () => {
-      // Cleanup script on unmount
-      if (document.body.contains(script)) {
-        document.body.removeChild(script);
-      }
-    };
   }, []);
 
   return (

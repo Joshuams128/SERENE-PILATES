@@ -7,6 +7,7 @@ import { Toaster } from "sonner";
 import SkipToContent from "@/components/SkipToContent";
 import StructuredData from "@/components/StructuredData";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -85,6 +86,7 @@ export default function RootLayout({
           closeButton
         />
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

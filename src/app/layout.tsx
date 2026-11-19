@@ -7,6 +7,7 @@ import { Toaster } from "sonner";
 import SkipToContent from "@/components/SkipToContent";
 import StructuredData from "@/components/StructuredData";
 import { Analytics } from "@vercel/analytics/next";
+import GoogleTagManager, { GoogleTagManagerNoScript } from "@/components/GoogleTagManager";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -69,6 +70,8 @@ export default function RootLayout({
         />
       </head>
       <body className={inter.className}>
+        <GoogleTagManagerNoScript />
+        <GoogleTagManager />
         <StructuredData />
         <div className="min-h-screen flex flex-col bg-[#FEFAE0]">
           <SkipToContent />

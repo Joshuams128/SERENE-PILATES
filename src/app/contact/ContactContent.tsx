@@ -2,9 +2,12 @@
 
 import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { toast } from 'sonner';
+import { LEAD_FLAG_KEY } from '@/lib/analytics';
 
 export default function ContactContent() {
+  const router = useRouter();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -30,13 +33,12 @@ export default function ContactContent() {
       const result = await response.json();
 
       if (response.ok) {
-        toast.success('Message sent successfully!', {
-          description: 'We\'ll get back to you as soon as possible.',
-          duration: 5000,
-        });
-        
-        // Reset form
-        setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+        try {
+          sessionStorage.setItem(LEAD_FLAG_KEY, '1');
+        } catch {
+          /* ignore */
+        }
+        router.push('/contact/thank-you');
       } else {
         throw new Error(result.error || 'Failed to send message');
       }
